@@ -10,3 +10,8 @@ Consigli del giorno:
 
 */
 
+// Visualizzare in pagina 5 numeri casuali.
+let numeroRandom = Math.floor(Math.random() * 5) + 1;
+console.log(numeroRandom)
+document.getElementById("titleRandom").innerText =`
+il mio numero random da 1 a 5 è :  ${numeroRandom}`;
