@@ -1,13 +1,13 @@
 /*
 Descrizione:
 Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi.
-*-creare un array vuoto
-*-creare una funzione per generare un numero random
-*ciclo per generare 5 numeri casuali nell'array/ bonus: controllare che siano univoci
-*-pushiamo ogni numero nell'array vuoto
+-creare un array vuoto
+-creare una funzione per generare un numero random
+ciclo per generare 5 numeri casuali nell'array/ bonus: controllare che siano univoci
+-pushiamo ogni numero nell'array vuoto
     stampiamo in pagina i numeri generati(con ciclo for e append se si vuole fare a parte)
-*-nascondo con il css i numeri visualizzati con il css dopo tot secondi
-*-far comparire 5 prompt dopo tot secondi
+-nascondo con il css i numeri visualizzati con il css dopo tot secondi
+-far comparire 5 prompt dopo tot secondi
 
     2 idee:
     -idea 1: salvare in un altro array i numeri scritti dall'utente nei prompt e controllare quali e quanti numeri coincidono con l'array del numero random;
@@ -24,6 +24,7 @@ Individuate gli elementi di cui avete bisogno per realizzare il programma.
 // -creare un array vuoto
 let arrayVuota = [];
 let limiteNumeriCasuali = 5;
+let numeriRandom = document.getElementById('titleRandom')
 
 // -creare una funzione per generare un numero random 
 function getRandomInt(min, max) {
@@ -32,18 +33,29 @@ function getRandomInt(min, max) {
 
 
 // => genereiamo 5 numeri casuali
-while( arrayVuota.length <= limiteNumeriCasuali ) {
+while( arrayVuota.length < limiteNumeriCasuali ) {
 
-    getRandomInt(1, 100)
-
+    // getRandomInt(1, 100)
+    arrayVuota.push( getRandomInt(1, 100) )
 }
+
 console.log(arrayVuota)
 
+// *soluzione 1
+// numeriRandom.innerHTML = arrayVuota
+
+
+// *soluzione 2
+
+for( let i = 0; i < arrayVuota.length; i++ ) {
+
+    numeriRandom.innerHTML += ` <div class="square">🎆${arrayVuota[i]}🎆</div> `  
+}
 
 
 
 
-// // Visualizzare in pagina 5 numeri casuali.
+// Visualizzare in pagina 5 numeri casuali.
 // let numeroRandom = Math.floor(Math.random() * 100) + 1;
 // console.log(numeroRandom)
 // document.getElementById("titleRandom").innerText =`
